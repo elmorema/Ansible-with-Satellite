@@ -1,11 +1,13 @@
 ---
  - name: create a test file
-   delegate_to: controller.lunchbox.dota-lab.iad.redhat.com
-   become: true
-   become_user: root
-   run_once: yes
-   file: 
- 	path: /home/admin/Desktop/testfile
-        owner: admin
-        group: admin
-        state: touch
+   hosts: controller.lunchbox.dota-lab.iad.redhat.com
+   tasks:
+     - name: create a test file
+       become: true
+       become_user: root
+       run_once: yes
+       file: 
+         	path: /home/admin/Desktop/testfile
+          owner: admin
+          group: admin
+          state: touch
