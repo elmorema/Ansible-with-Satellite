@@ -1,5 +1,5 @@
 ---
- - name: create a test file
+   name: create a test file
    hosts: controller.lunchbox.dota-lab.iad.redhat.com
    tasks:
      - name: create a test file
