@@ -1,0 +1,11 @@
+---
+name: Subscribe the systems to the satellite
+hosts: new_rhel
+become: true
+tasks:
+  - name: this is the first and only tasks needed to subscribe the systems to satellite
+    redhat_subscription:
+      state: present
+      activationkey:
+      org_id:
+      pool:
