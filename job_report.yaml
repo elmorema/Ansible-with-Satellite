@@ -110,10 +110,12 @@
 
     - name: get working directory
       delegate_to: localhost
+      run_once: yes
       command: pwd
       register: work_dir
 
     - name: print working directory
+      run_once: yes
       delegate_to: localhost
       debug:
         msg: "{{ work_dir }}"
@@ -127,8 +129,8 @@
       become_user: root
       run_once: yes
       template:
-        owner: admin
-        group: admin
+        # owner: admin
+        # group: admin
         src: job_report_master.j2
         dest: "reports/job_report_{{ hostvars['localhost']['date_str'] }}.html"
         # dest: "/home/admin/Desktop/job_report_{{ hostvars['localhost']['date_str'] }}.html"
