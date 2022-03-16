@@ -3,6 +3,12 @@ name: Subscribe the systems to the satellite
 hosts: new_rhel
 become: true
 tasks:
+  - name: Create a admin user
+    ansible.builtin.user:
+    name: admin
+    comment: admin user
+    group: admin
+    
   - name: this is the first and only tasks needed to subscribe the systems to satellite
     redhat_subscription:
       state: present
