@@ -6,8 +6,8 @@
        become: true
        become_user: root
        run_once: yes
-       file: 
-         	path: /home/admin/Desktop/testfile
-          owner: admin
-          group: admin
-          state: touch
+       file:
+         path: /home/admin/Desktop/testfile
+         owner: admin
+         group: admin
+         state: touch
