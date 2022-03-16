@@ -123,7 +123,7 @@
 
           
     - name: Generate job report under ./reports/job_report_{{ hostvars['localhost']['date_str'] }}.html
-      delegate_to: localhost
+      delegate_to: controller.lunchbox.dota-lab.iad.redhat.com
       delegate_facts: True
       become: true
       become_user: root
